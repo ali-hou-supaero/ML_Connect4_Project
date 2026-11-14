@@ -1,28 +1,28 @@
-# Connect Four — Supervised Outcome Classification
+# Puissance 4 — Classification supervisée de l’issue d’une position
 
-A machine-learning project by **Ali Houssenaly and Côme Guillarme**, studying the [UCI Connect-4 dataset](https://archive.ics.uci.edu/dataset/26/connect+4).
+Projet de machine learning par **Ali Houssenaly et Côme Guillarme**, consacré au [jeu de données UCI Connect-4](https://archive.ics.uci.edu/dataset/26/connect+4).
 
-The objective is to predict **win, loss or draw for the first player** from a board position. This repository studies classification of labelled positions; it does not implement a complete game-playing agent.
+L’objectif est de prédire **victoire, défaite ou match nul pour le premier joueur** à partir d’une position du plateau. Le dépôt étudie la classification de positions étiquetées ; il n’implémente pas un agent de jeu complet.
 
-## Approach
+## Démarche
 
-- Explore board states and class imbalance.
-- One-hot encode board features and encode target labels when required.
-- Compare Random Forest, SVM and XGBoost.
-- Tune hyperparameters with GridSearchCV and compare raw-data and resampled approaches.
-- Inspect confusion matrices and classification reports, with attention to macro F1 and minority classes.
+- Explorer les positions et le déséquilibre des classes.
+- Encoder les caractéristiques du plateau en one-hot et les classes cibles lorsque nécessaire.
+- Comparer Random Forest, SVM et XGBoost.
+- Optimiser les hyperparamètres avec GridSearchCV et comparer les approches sur données initiales et rééchantillonnées.
+- Examiner les matrices de confusion et les rapports de classification, notamment le F1 macro et les classes minoritaires.
 
-The notebook contains the experimental discussion and saved outputs. Results have not been independently reproduced for this documentation update.
+Le notebook contient la discussion expérimentale et les sorties enregistrées. Les résultats n’ont pas été reproduits indépendamment à l’occasion de cette mise à jour documentaire.
 
-## Contents
+## Contenu
 
-- [Project notebook](HOUSSENALY_GUILLARME_Project.ipynb) — methodology, training/loading prompts and evaluation.
-- [Video presentation](HOUSSENALY_GUILLARME_Video.mp4) — accompanying presentation.
-- `models/` — saved Random Forest, SVM and XGBoost models, including resampled variants.
+- [Notebook du projet](HOUSSENALY_GUILLARME_Project.ipynb) — méthode, choix entraînement/chargement et évaluation.
+- [Présentation vidéo](HOUSSENALY_GUILLARME_Video.mp4) — présentation associée.
+- `models/` — modèles Random Forest, SVM et XGBoost enregistrés, avec leurs variantes rééchantillonnées.
 
-## Getting started
+## Prise en main
 
-Install Git LFS before cloning. On Debian/Ubuntu:
+Installer Git LFS avant de cloner le dépôt. Sous Debian/Ubuntu :
 
 ```bash
 sudo apt install git-lfs
@@ -32,12 +32,12 @@ cd ML_Connect4_Project
 git lfs pull
 ```
 
-On other operating systems, install Git LFS using the appropriate installer, then run `git lfs install` before cloning.
+Sur les autres systèmes, installer Git LFS avec l’installateur adapté, puis exécuter `git lfs install` avant le clonage.
 
-Use Jupyter with Python, ucimlrepo, pandas, NumPy, matplotlib, seaborn, scikit-learn, XGBoost and joblib. The notebook retrieves UCI dataset 26 using `fetch_ucirepo`, so network access is needed.
+Utiliser Jupyter avec Python, ucimlrepo, pandas, NumPy, matplotlib, seaborn, scikit-learn, XGBoost et joblib. Le notebook récupère le dataset UCI 26 avec `fetch_ucirepo` ; un accès réseau est donc nécessaire.
 
-Launch the notebook from the repository root. When prompted, choose whether to train or load a model; loading the suggested saved model avoids repeating the grid search. Only load model files from sources you trust. Saved models can require the library versions used to create them; a pinned environment is not supplied.
+Lancer le notebook depuis la racine du dépôt. Aux invites, choisir d’entraîner ou de charger un modèle ; charger le modèle enregistré suggéré permet d’éviter de relancer la recherche par grille. Charger uniquement des modèles de confiance. Les modèles enregistrés peuvent nécessiter les versions des bibliothèques utilisées lors de leur création ; aucun environnement verrouillé n’est fourni.
 
-## Reproducibility and credits
+## Reproductibilité et crédits
 
-The analysis is a joint project. Model development, conclusions and presentation should be credited to both authors. Dataset provenance is the UCI link above. The repository preserves the original experiments and does not claim a newly validated benchmark.
+L’analyse est un travail commun. Le développement des modèles, les conclusions et la présentation doivent être attribués aux deux auteurs. La source des données est indiquée par le lien UCI ci-dessus. Le dépôt conserve les expériences originales et ne revendique pas de benchmark nouvellement validé.
